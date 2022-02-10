@@ -32,6 +32,49 @@ img, svg {
   /* background: #282c34; */
 }
 
+.custom-carousel-item{
+  width: 50% !important;
+}
+.slick-prev{
+  z-index: 99999999 !important;
+  left: 10px !important;
+}
+.slick-next{
+  z-index: 99999 !important;
+  right: 10px !important;
+}
+.slick-dots{
+  color: #ffffff !important;
+}
+.slick-dots li button:before {
+  color: #ffffff !important;
+  height: 10px;
+  width: 10px;
+}
+.slick-dots li.slick-active button:before {
+  color: #ffffff !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #ffffff !important;
+}
+
+.slider-image{
+  height: 400px;
+}
+.slick-slide{
+padding:0px 10px;
+max-width: 600px;
+} 
+.slider-image-container{
+  border-radius: 10px;
+  overflow: hidden;
+}
+.slick-active{
+  /* border: 1px solid; */
+
+}
 .navbar {
   /* position: relative; */
   /* display: flex;

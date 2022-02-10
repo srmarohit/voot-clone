@@ -14,13 +14,15 @@ export const Header = () => {
               />
             </a>
 
+          
+
             <button className="btn upgrade-button mx-5" tabindex="0" type="button">
               <span class="">Upgrade</span>
             </button>
           </div>
           <div>
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNavDropdown"
@@ -28,30 +30,30 @@ export const Header = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item">
+            <div className="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul className="navbar-nav">
+                <li className="nav-item">
                   <div className="px-3 header-list-active">MyVoot</div>
                 </li>
-                <li class="nav-item">
-                  <div className="px-3 header-list"> premium</div>
+                <li className="nav-item">
+                  <div className="px-3 header-list-active"> premium</div>
                 </li>
-                <li class="nav-item ">
-                  <div className="px-3 header-list"> Sports</div>
+                <li className="nav-item ">
+                  <div className="px-3 header-list-active"> Sports</div>
                 </li>
-                <li class="nav-item">
-                  <div className="px-3 header-list"> Shows </div>
+                <li className="nav-item">
+                  <div className="px-3 header-list-active"> Shows </div>
                 </li>
-                <li class="nav-item">
-                  <div className="px-3 header-list"> Movies</div>
+                <li className="nav-item">
+                  <div className="px-3 header-list-active"> Movies</div>
                 </li>
-                <li class="nav-item">
-                  <div className="px-3"> Channels</div>
+                <li className="nav-item">
+                  <div className="px-3 header-list-active"> Channels</div>
                 </li>
-                <li class="nav-item">
-                  <div className="px-3"> News </div>
+                <li className="nav-item">
+                  <div className="px-3 header-list-active"> News </div>
                 </li>
                 <li>
                   <img src="https://www.voot.com/images/icon_search_white.svg" />
