@@ -11,7 +11,7 @@ const MustHeadComponent = ({ data }) => {
 
     axios.get(apiUrl).then((res) => {
       console.log(res.data);
-      setMustHeadData(res.data.result);
+      setMustHeadData(res.data.result); 
     });
   }, []);
   const settings = {
@@ -26,24 +26,25 @@ const MustHeadComponent = ({ data }) => {
       <Slider {...settings} dots={true}>
            {mustheadData.map((data, index) => {
             let image = data.details.image["16x9"];
-            console.log(image);
 
             if(image !== undefined){
-              console.log("dasjdasdhsakd");
+              let imageUrl = `https://v3img.voot.com/resizeMedium,w_845,h_475/${image}`;
+              return (
+                <div className="slider-image-container" key={index}>
+                  <img src={imageUrl} className="d-block w-100 slider-image" alt="..." />
+                </div>
+              );
             }
-            let imageUrl = `https://v3img.voot.com/resizeMedium,w_845,h_475/${image}`;
-            console.log(imageUrl);
-            return (
-              <div className="slider-image-container" key={index}>
-                <img src={imageUrl} className="d-block w-100 slider-image" alt="..." />
-              </div>
-            );
+            
           })}
+
+          
         </Slider>
       {/* Hi this is MustHeadComponent */}
      
     </div>
   );
 };
+
 
 export default MustHeadComponent;

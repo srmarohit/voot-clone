@@ -4,7 +4,8 @@ import MustHeadComponent from "../components/MustHeadComponent";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-// import ChipsButtonRail from "../components/Layout/ChipsButtonRail";
+import ChipsButtonRail from "../components/Layout/ChipsButtonRail";
+import FlexiLayoutRail from "../components/Layout/FlexiLayoutRail";
 
 const MainContainer = () => {
   const [page, setPage] = useState(1);
@@ -46,6 +47,21 @@ const MainContainer = () => {
               <MustHeadComponent data={e} />
             </div>
           );
+        case "ChipsButtonLayoutRail":
+
+          return (
+            <div className="row mt-3 d-flex">
+              <ChipsButtonRail data={e} />
+            </div>
+          );
+
+          case "FlexiLayoutRail":
+          return (
+            <div className="row mt-3 d-flex">
+              <FlexiLayoutRail data={e} />
+            </div>
+          );
+
       }
     });
 

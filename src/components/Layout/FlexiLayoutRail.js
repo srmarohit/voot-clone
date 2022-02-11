@@ -3,30 +3,30 @@ import axios from "axios";
 import { Row } from "react-bootstrap";
 
 
-const ChipsButtonRail = ({ data }) => {
+const FlexiLayoutRail = ({data}) => {
   
     // console.log(data);
-    const [chipsButtonRailData, setChipsButtonRailData] = useState([]);
+    const [flexiLayoutRailData, setFlexiLayoutRailData] = useState([]);
 
   useEffect(() => {
     let apiUrl = `https://psapi.voot.com/jio/voot/v1/voot-web/${data.url}`; 
     // console.log("hjdsgs");
     axios.get(apiUrl).then((res) => {
-      // console.log(res.data);
-      setChipsButtonRailData(res.data.result);
-      // console.log(res.data.result)
+      console.log(res.data);
+      setFlexiLayoutRailData(res.data.result);
+      console.log(res.data.result) 
 
     });
   }, []);
 
   return(
 
-    <div className="d-flex text-white mt-5">
+    <div>
        {
-         chipsButtonRailData.map((data,index) =>{
+         flexiLayoutRailData.map((data,index) =>{
            return(
-             <div className="custom-chip mx-10" >
-               {data.meta.assetRef.buttonText}
+             <div>
+               HI
               </div>
            )
          })
@@ -38,6 +38,6 @@ const ChipsButtonRail = ({ data }) => {
    
   }
          
-export default ChipsButtonRail;
+export default FlexiLayoutRail;
     
      
