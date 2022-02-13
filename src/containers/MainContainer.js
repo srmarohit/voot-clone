@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import ChipsButtonRail from "../components/Layout/ChipsButtonRail";
 import FlexiLayoutRail from "../components/Layout/FlexiLayoutRail";
 
+
 const MainContainer = () => {
   const [page, setPage] = useState(1);
   const [mainPage, setMainPage] = useState("my-voot");
@@ -50,9 +51,9 @@ const MainContainer = () => {
         case "ChipsButtonLayoutRail":
 
           return (
-            <div className="row mt-3 d-flex">
+            <Row className="row mt-3  container">
               <ChipsButtonRail data={e} />
-            </div>
+            </Row>
           );
 
           case "FlexiLayoutRail":

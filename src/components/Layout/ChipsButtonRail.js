@@ -18,7 +18,7 @@ const ChipsButtonRail = ({ data }) => {
 
     });
   }, []);
-
+ 
   return(
 
     <div className="d-flex text-white mt-5">

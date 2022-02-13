@@ -3,21 +3,19 @@ import React from "react";
 export const Header = () => {
   return (
     <div className="Header py-3 px-5">
-      <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid custom-nav d-flex justify-content-between">
+      <nav className="navbar navbar-expand-lg ">
+        <div className="container-fluid custom-nav d-flex justify-content-between">
           <div>
-            <a class="navbar-brand" href="#">
-              <img
+            <a className="navbar-brand" href="#">
+              <img className="Voot"
                 src="https://www.voot.com/images/Voot-Logo.svg"
                 alt="logo"
                 title="voot"
               />
             </a>
 
-          
-
             <button className="btn upgrade-button mx-5" tabindex="0" type="button">
-              <span class="">Upgrade</span>
+              <span className="">Upgrade</span>
             </button>
           </div>
           <div>
@@ -56,10 +54,13 @@ export const Header = () => {
                   <div className="px-3 header-list-active"> News </div>
                 </li>
                 <li>
-                  <img src="https://www.voot.com/images/icon_search_white.svg" />
+                  <img className="search"
+                  
+                  src="https://www.voot.com/images/icon_search_white.svg" />
                 </li>
                 <li>
-                  <img src="https://www.voot.com/images/userAvatar.svg" />
+                  <img  className="user"
+                  src="https://www.voot.com/images/userAvatar.svg" />
                 </li>
               </ul>
             </div>
