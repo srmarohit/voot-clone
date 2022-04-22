@@ -1,5 +1,4 @@
 import React from "react";
-
 export const Header = () => {
   return (
     <div className="Header py-3 px-5">
@@ -12,6 +11,13 @@ export const Header = () => {
                 alt="logo"
                 title="voot"
               />
+            </a>
+            <a className="navbar-brand" href="#">
+            <img className="line"
+            src = "https://www.voot.com/images/upgrade-line.svg"
+            alt="Voot Upgrade"
+            title="Upgrade"
+            />
             </a>
 
             <button className="btn upgrade-button mx-5" tabindex="0" type="button">

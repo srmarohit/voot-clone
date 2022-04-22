@@ -4,41 +4,40 @@ import { Row } from "react-bootstrap";
 import Slider from "react-slick";
 
  
-const FlexiLayoutRail = ({ data }) => {
+const SpotlightMini = ({ data }) => {
   // console.log(data);
- const [flexiLayoutRailData, setFlexiLayoutRailData] = useState([]);
+ const [spotlightMiniData, setSpotlightMiniData] = useState([]);
  useEffect(() => {
    let apiUrl = `https://psapi.voot.com/jio/voot/v1/voot-web/${data.url}&responseType=common`; 
 
    axios.get(apiUrl).then((res) => {
-      // console.log(res.data);
-      setFlexiLayoutRailData(res.data.result); 
-      // console.log(setFlexiLayoutRailData)
+      console.log(res.data);
+      setSpotlightMiniData(res.data.result); 
+      console.log(setSpotlightMiniData);
    });
  }, []);
  const settings = {
-  //  dots: true,
+   dots: true,
    infinite: true,
    speed: 500,
-   slidesToShow: 5,
+   slidesToShow: 2,
    slidesToScroll: 1,
  };
  return (
-   <div className="FlexiLayoutRail container-fluid ">
-     <div className="title">{data.title}</div>
-     <Slider >
-       {flexiLayoutRailData.map((data, index) => {
-        //  console.log(data);
+   <div className=" container-fluid ">
+        <div className="title">{data.title}</div>
+     <Slider {...settings} dots={true}>
+       {spotlightMiniData.map((data, index) => {
          let image = data.image4x3;
          
 
          if (image !== undefined) {
            let imageUrl = `https://v3img.voot.com/resizeMedium,w_845,h_475/${image}`;
            return (
-             <div className="flexiLayoutRail">
+             <div className="slider-image-container" key={index}>
                <img
                  src={imageUrl}
-                 className="d-block slider-image"
+                 className="d-block w-100 slider-image"
                  alt="..."
                />
              </div>
@@ -50,4 +49,4 @@ const FlexiLayoutRail = ({ data }) => {
  );
 };
 
-export default FlexiLayoutRail;
+export default SpotlightMini;

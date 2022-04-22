@@ -4,13 +4,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const MustHeadComponent = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   const [mustheadData, setMustHeadData] = useState([]);
   useEffect(() => {
     let apiUrl = `https://psapi.voot.com/jio/voot/v1/voot-web/${data.url}`; // after tray  api url for  component
 
     axios.get(apiUrl).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setMustHeadData(res.data.result);
     });
   }, []);

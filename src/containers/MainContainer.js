@@ -6,7 +6,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ChipsButtonRail from "../components/Layout/ChipsButtonRail";
 import FlexiLayoutRail from "../components/Layout/FlexiLayoutRail";
-
+import ContentCardRail from "../components/Layout/ContentCardRail";
+import SpotlightMini from "../components/Layout/SpotlightMini";
+// import AdLayout from "../components/Layout/AdLayout";
 
 const MainContainer = () => {
   const [page, setPage] = useState(1);
@@ -19,8 +21,11 @@ const MainContainer = () => {
   useEffect(() => {
     let getTrayUrl = `${baseUrl}/view/${mainPage}?page=${page}&responseType=common&features=include:buttonsTray&premiumTrays=false`;
     axios.get(getTrayUrl).then((res) => {
-      console.log(res);
+      // console.log(res);
       setTrayData(res.data.trays); // Getting all tray  data here
+      if (page < 200) {
+        setPage(page + 1);
+      }
     });
   }, [page]);
 
@@ -38,9 +43,9 @@ const MainContainer = () => {
     });
 
     setNewArray(arrayData);
-    console.log(arrayData);
+    // console.log(arrayData);
     let listOfTray = arrayData.map((e) => {
-      console.log(e);
+      // console.log(e);
       switch (e.layout) {
         case "WatchNextRail":
           return (
@@ -49,20 +54,39 @@ const MainContainer = () => {
             </div>
           );
         case "ChipsButtonLayoutRail":
-
           return (
             <Row className="row mt-3  container">
               <ChipsButtonRail data={e} />
             </Row>
           );
 
-          case "FlexiLayoutRail":
+        case "FlexiLayoutRail":
           return (
             <div className="row mt-3 d-flex">
               <FlexiLayoutRail data={e} />
             </div>
           );
 
+        case "ContentCardRail":
+          return (
+            <div>
+              <ContentCardRail data={e} />
+            </div>
+          );
+
+        //           case "AdLayout":
+        //             return(
+        //             <div>
+        //               <AdLayout data = {e}/>
+        //             </div>
+        // );
+
+        case "ContentCardRail":
+          return (
+            <div>
+              <SpotlightMini data={e} />
+            </div>
+          );
       }
     });
 
@@ -70,7 +94,10 @@ const MainContainer = () => {
   }, [trayData]);
 
   return (
-    <div className="container-fluid">
+    <div
+      className="container-fluid"
+      style={{ flex: 8, height: "100vh", width: "80%", overflow: "scroll" }}
+    >
       {/* This is MainContainer */}
       {listOfTray}
     </div>
